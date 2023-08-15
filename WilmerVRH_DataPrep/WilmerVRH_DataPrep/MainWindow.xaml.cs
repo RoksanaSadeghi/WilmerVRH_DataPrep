@@ -32,6 +32,10 @@ namespace WilmerVRH_DataPrep
         bool hardAll = true;
 
         WilmerVRH_tests vrh = new WilmerVRH_tests();
+        public static List<List<WilmerVRHData>> selectedTasks = new();
+
+        public static int time;
+        public static int numberOfPlaylists;
 
         public MainWindow()
         {
@@ -107,9 +111,8 @@ namespace WilmerVRH_DataPrep
             object obj = new WilmerVRH_tests();
             Type type = obj.GetType();
 
-            int time;
-            int numberOfTests;
-            int numberOfPlaylists;
+            time = new();
+            numberOfPlaylists = new();
 
             if ( !int.TryParse(NumberOfPlaylistsTextBox.Text, out numberOfPlaylists) || !int.TryParse(TimeTextBox.Text, out time))
             {
@@ -118,10 +121,15 @@ namespace WilmerVRH_DataPrep
             }
 
             //add the selected tests to the list
-            List<List<WilmerVRHData>> selectedTasks = new();
+            selectedTasks = new();
             foreach (var item in vrh.wilmerVRHTasks)
             {
-                if (item.Value[0] == 0 && item.Value[1] == 0 && item.Value[2] == 0) { continue; }
+                bool cont = true;
+                for (int i = 0; i < item.Value.Length; i++)
+                {
+                    if (item.Value[i] == 1) { cont = false;break; }
+                }
+                if (cont) { continue; }
                 string methodName = item.Key.Replace("_", "");
 
                 List<WilmerVRHData> t = new List<WilmerVRHData>();
@@ -138,12 +146,10 @@ namespace WilmerVRH_DataPrep
                 selectedTasks.Add(t);
             }
 
-            var dialog = new Ookii.Dialogs.Wpf.VistaFolderBrowserDialog();
-            if (dialog.ShowDialog(this).GetValueOrDefault())
-            {
-                string outputDir = dialog.SelectedPath;
-                Writer.CreateMultipleJasons(selectedTasks, numberOfPlaylists, outputDir);
-            }
+            //PracticeScenes;
+            PracticeScenes practiceScenesWindow = new PracticeScenes();
+            practiceScenesWindow.Show();
+           
 
         }
 

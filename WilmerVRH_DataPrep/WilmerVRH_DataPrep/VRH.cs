@@ -1424,6 +1424,92 @@ namespace WilmerVRH_DataPrep
             }
 
         }
+        public static List<WilmerVRHData> WhackAMole(string level = "easy", int time = 1)
+        {
+            List<WilmerVRHData> data = new();
+            //int numTest = 1;
+            //difficulty level
+            string diffLevel;
+            string[] position = new string[1] { "Row 1 Column 1/Row 2 Column 3" };
+            switch (level)
+            {
+                case "easy":
+                    diffLevel = "4 Seconds";
+                    break;
+                case "medium":
+                    diffLevel = "2 Seconds";
+                    break;
+                case "hard":
+                    diffLevel = "1 Second";
+                    break;
+                default:
+                    diffLevel = "4 Seconds";
+                    break;
+            }
+
+            List<Option_dict> task_option_dict = Create_option_dict();
+            foreach (Option_dict item in task_option_dict)
+            {
+                data.Add(
+                new WilmerVRHData()
+                {
+                    sceneName = "scene02-whackamole",
+                    sceneTitle = "Whack-a-mole",
+                    presentationTime = time,
+                    timeOut = 600,
+                    graspThreshold = 0.3499999940395355,
+                    experimentMode = 0,
+                    controllerType = "Hands",
+                    serializedOptionsDictionary = item
+                }
+                );
+            }
+
+            return data;
+
+            List<Option_dict> Create_option_dict()
+            {
+                List<Option_dict> output = new();
+                foreach (string spawnPosition in position)
+                {
+                    output.Add(
+                         new Option_dict
+                         {
+                             key_strings = new string[2] { "TimeLimit", "SpawnPosition" },
+                             value_strings = new string[2] { diffLevel, spawnPosition }
+                         }
+                        );
+                }
+                for (int i = 0; i < 3; i++)
+                {
+                    output.Add(
+                    new Option_dict
+                    {
+                        key_strings = new string[2] { "TimeLimit", "SpawnPosition" },
+                        value_strings = new string[2] { diffLevel, "Random" }
+                    }
+                    );
+                }
+
+
+                return output;
+
+            }
+
+        }
+
+    }
+    public class WilmerVRH_Practice
+    {
+        public SortedDictionary<string, int> wilmerVRHPracticeTasks = new SortedDictionary<string, int>()
+        {
+            { "Practice_Blocks", 0 },
+            { "Practice_Ball", 0 },
+            { "Practice_Plate_and_Fork", 0 },
+            { "Practice_Toothbrush", 0 },
+            { "Practice_Pouring_Batter", 0 },
+            { "Practice_Pancake", 0 },
+        };
         public static List<WilmerVRHData> PracticeBlocks(string level = "easy", int time = 1)
         {
             List<WilmerVRHData> data = new();
@@ -1646,80 +1732,9 @@ namespace WilmerVRH_DataPrep
             }
 
         }
-        public static List<WilmerVRHData> WhackAMole(string level = "easy", int time = 1)
-        {
-            List<WilmerVRHData> data = new();
-            //int numTest = 1;
-            //difficulty level
-            string diffLevel;
-            string[] position = new string[1] { "Row 1 Column 1/Row 2 Column 3" };
-            switch (level)
-            {
-                case "easy":
-                    diffLevel = "4 Seconds";
-                    break;
-                case "medium":
-                    diffLevel = "2 Seconds";
-                    break;
-                case "hard":
-                    diffLevel = "1 Second";
-                    break;
-                default:
-                    diffLevel = "4 Seconds";
-                    break;
-            }
 
-            List<Option_dict> task_option_dict = Create_option_dict();
-            foreach (Option_dict item in task_option_dict)
-            {
-                data.Add(
-                new WilmerVRHData()
-                {
-                    sceneName = "scene02-whackamole",
-                    sceneTitle = "Whack-a-mole",
-                    presentationTime = time,
-                    timeOut = 600,
-                    graspThreshold = 0.3499999940395355,
-                    experimentMode = 0,
-                    controllerType = "Hands",
-                    serializedOptionsDictionary = item
-                }
-                );
-            }
-
-            return data;
-
-            List<Option_dict> Create_option_dict()
-            {
-                List<Option_dict> output = new();
-                foreach (string spawnPosition in position)
-                {
-                    output.Add(
-                         new Option_dict
-                         {
-                             key_strings = new string[2] { "TimeLimit", "SpawnPosition" },
-                             value_strings = new string[2] { diffLevel, spawnPosition }
-                         }
-                        );
-                }
-                for (int i = 0; i < 3; i++)
-                {
-                    output.Add(
-                    new Option_dict
-                    {
-                        key_strings = new string[2] { "TimeLimit", "SpawnPosition" },
-                        value_strings = new string[2] { diffLevel, "Random" }
-                    }
-                    );
-                }
-
-
-                return output;
-
-            }
-
-        }
 
 
     }
+
 }
