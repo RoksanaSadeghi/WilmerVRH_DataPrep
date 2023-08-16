@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -82,7 +83,25 @@ namespace WilmerVRH_DataPrep
             List<Option_dict> task_option_dict = Create_option_dict();
             foreach (Option_dict item in task_option_dict)
             {
-                data.Add(
+                if (item.value_strings[1] == "Random")
+                {
+                    data.Add(
+                new WilmerVRHData()
+                {
+                    sceneName = "scene06-throwing-paper",
+                    sceneTitle = "Throw Soccer Ball",
+                    presentationTime = time,
+                    timeOut = 600,
+                    graspThreshold = 0.3499999940395355,
+                    experimentMode = 1,
+                    controllerType = "Hands",
+                    serializedOptionsDictionary = item
+                }
+                );
+                }
+                else
+                {
+                    data.Add(
                 new WilmerVRHData()
                 {
                     sceneName = "scene06-throwing-paper",
@@ -95,6 +114,8 @@ namespace WilmerVRH_DataPrep
                     serializedOptionsDictionary = item
                 }
                 );
+                }
+                
             }
 
             return data;
@@ -151,19 +172,39 @@ namespace WilmerVRH_DataPrep
             List<Option_dict> task_option_dict = Create_option_dict();
             foreach (Option_dict item in task_option_dict)
             {
-                data.Add(
-                new WilmerVRHData()
+                if (item.value_strings[1] == "Random")
                 {
-                    sceneName = "scene03-sorting-blocks",
-                    sceneTitle = "Sorting Blocks",
-                    presentationTime = time,
-                    timeOut = 600,
-                    graspThreshold = 0.3499999940395355,
-                    experimentMode = 0,
-                    controllerType = "Hands",
-                    serializedOptionsDictionary = item
+                    data.Add(
+                    new WilmerVRHData()
+                    {
+                        sceneName = "scene03-sorting-blocks",
+                        sceneTitle = "Sorting Blocks",
+                        presentationTime = time,
+                        timeOut = 600,
+                        graspThreshold = 0.3499999940395355,
+                        experimentMode = 1,
+                        controllerType = "Hands",
+                        serializedOptionsDictionary = item
+                    }
+                    );
                 }
-                );
+                else
+                {
+                    data.Add(
+                    new WilmerVRHData()
+                    {
+                        sceneName = "scene03-sorting-blocks",
+                        sceneTitle = "Sorting Blocks",
+                        presentationTime = time,
+                        timeOut = 600,
+                        graspThreshold = 0.3499999940395355,
+                        experimentMode = 0,
+                        controllerType = "Hands",
+                        serializedOptionsDictionary = item
+                    }
+                    );
+                }
+                    
             }
 
             return data;
@@ -226,7 +267,25 @@ namespace WilmerVRH_DataPrep
             List<Option_dict> task_option_dict = Create_option_dict();
             foreach (Option_dict item in task_option_dict)
             {
-                data.Add(
+                if (item.value_strings[1] == "Random")
+                {
+                    data.Add(
+                new WilmerVRHData()
+                {
+                    sceneName = "scene08-locating-toothbrush",
+                    sceneTitle = "Pickup Hairbrush",
+                    presentationTime = time,
+                    timeOut = 600,
+                    graspThreshold = 0.3499999940395355,
+                    experimentMode = 1,
+                    controllerType = "Hands",
+                    serializedOptionsDictionary = item
+                }
+                );
+                }
+                else
+                {
+                    data.Add(
                 new WilmerVRHData()
                 {
                     sceneName = "scene08-locating-toothbrush",
@@ -239,6 +298,8 @@ namespace WilmerVRH_DataPrep
                     serializedOptionsDictionary = item
                 }
                 );
+                }
+                
             }
 
             return data;
@@ -312,7 +373,25 @@ namespace WilmerVRH_DataPrep
             List<Option_dict> task_option_dict = Create_option_dict();
             foreach (Option_dict item in task_option_dict)
             {
-                data.Add(
+                if (item.value_strings[1] == "Random")
+                {
+                    data.Add(
+                new WilmerVRHData()
+                {
+                    sceneName = "scene11-building-tower-diffrentSize",
+                    sceneTitle = "Building Tower - Different Sizes",
+                    presentationTime = time,
+                    timeOut = 600,
+                    graspThreshold = 0.3499999940395355,
+                    experimentMode = 1,
+                    controllerType = "Hands",
+                    serializedOptionsDictionary = item
+                }
+                );
+                }
+                else
+                {
+                    data.Add(
                 new WilmerVRHData()
                 {
                     sceneName = "scene11-building-tower-diffrentSize",
@@ -325,6 +404,8 @@ namespace WilmerVRH_DataPrep
                     serializedOptionsDictionary = item
                 }
                 );
+                }
+                    
             }
 
             return data;
@@ -376,7 +457,25 @@ namespace WilmerVRH_DataPrep
             List<Option_dict> task_option_dict = Create_option_dict();
             foreach (Option_dict item in task_option_dict)
             {
-                data.Add(
+                if (item.value_strings[1] == "Random")
+                {
+                    data.Add(
+                new WilmerVRHData()
+                {
+                    sceneName = "scene05-building-tower-sameSize",
+                    sceneTitle = "Building Tower - Same Size",
+                    presentationTime = time,
+                    timeOut = 600,
+                    graspThreshold = 0.3499999940395355,
+                    experimentMode = 1,
+                    controllerType = "Hands",
+                    serializedOptionsDictionary = item
+                }
+                );
+                }
+                else
+                {
+                    data.Add(
                 new WilmerVRHData()
                 {
                     sceneName = "scene05-building-tower-sameSize",
@@ -389,6 +488,8 @@ namespace WilmerVRH_DataPrep
                     serializedOptionsDictionary = item
                 }
                 );
+                }
+                    
             }
 
             return data;
@@ -434,7 +535,25 @@ namespace WilmerVRH_DataPrep
             List<Option_dict> task_option_dict = Create_option_dict();
             foreach (Option_dict item in task_option_dict)
             {
-                data.Add(
+                if(item.value_strings[1] == "Random")
+                {
+                    data.Add(
+                new WilmerVRHData()
+                {
+                    sceneName = "scene16-cookie-dough",
+                    sceneTitle = "Baking Cookie",
+                    presentationTime = time,
+                    timeOut = 600,
+                    graspThreshold = 0.3499999940395355,
+                    experimentMode = 1,
+                    controllerType = "Hands",
+                    serializedOptionsDictionary = item
+                }
+                );
+                }
+                else
+                {
+                    data.Add(
                 new WilmerVRHData()
                 {
                     sceneName = "scene16-cookie-dough",
@@ -447,6 +566,8 @@ namespace WilmerVRH_DataPrep
                     serializedOptionsDictionary = item
                 }
                 );
+                }
+                
             }
 
             return data;
@@ -498,7 +619,25 @@ namespace WilmerVRH_DataPrep
             List<Option_dict> task_option_dict = Create_option_dict();
             foreach (Option_dict item in task_option_dict)
             {
-                data.Add(
+                if (item.value_strings[1] == "Random")
+                {
+                    data.Add(
+                new WilmerVRHData()
+                {
+                    sceneName = "scene13-locate-door-handle",
+                    sceneTitle = "Locating Door Handle",
+                    presentationTime = time,
+                    timeOut = 600,
+                    graspThreshold = 0.3499999940395355,
+                    experimentMode = 1,
+                    controllerType = "Hands",
+                    serializedOptionsDictionary = item
+                }
+                );
+                }
+                else
+                {
+                    data.Add(
                 new WilmerVRHData()
                 {
                     sceneName = "scene13-locate-door-handle",
@@ -511,6 +650,8 @@ namespace WilmerVRH_DataPrep
                     serializedOptionsDictionary = item
                 }
                 );
+                }
+                
             }
 
             return data;
@@ -570,7 +711,25 @@ namespace WilmerVRH_DataPrep
             List<Option_dict> task_option_dict = Create_option_dict();
             foreach (Option_dict item in task_option_dict)
             {
-                data.Add(
+                if (item.value_strings[1] == "Random")
+                {
+                    data.Add(
+                new WilmerVRHData()
+                {
+                    sceneName = "scene10-locating-a-fruit",
+                    sceneTitle = "Pick a Fruit",
+                    presentationTime = time,
+                    timeOut = 600,
+                    graspThreshold = 0.3499999940395355,
+                    experimentMode = 1,
+                    controllerType = "Hands",
+                    serializedOptionsDictionary = item
+                }
+                );
+                }
+                else 
+                {
+                    data.Add(
                 new WilmerVRHData()
                 {
                     sceneName = "scene10-locating-a-fruit",
@@ -583,6 +742,7 @@ namespace WilmerVRH_DataPrep
                     serializedOptionsDictionary = item
                 }
                 );
+                }
             }
 
             return data;
@@ -647,7 +807,25 @@ namespace WilmerVRH_DataPrep
             List<Option_dict> task_option_dict = Create_option_dict();
             foreach (Option_dict item in task_option_dict)
             {
-                data.Add(
+                if(item.value_strings[1] == "Random")
+                {
+                    data.Add(
+                new WilmerVRHData()
+                {
+                    sceneName = "scene18-putting-on-glove",
+                    sceneTitle = "Putting on Gloves",
+                    presentationTime = time,
+                    timeOut = 600,
+                    graspThreshold = 0.3499999940395355,
+                    experimentMode = 1,
+                    controllerType = "Hands",
+                    serializedOptionsDictionary = item
+                }
+                );
+                }
+                else
+                {
+                    data.Add(
                 new WilmerVRHData()
                 {
                     sceneName = "scene18-putting-on-glove",
@@ -660,6 +838,8 @@ namespace WilmerVRH_DataPrep
                     serializedOptionsDictionary = item
                 }
                 );
+                }
+                
             }
 
             return data;
@@ -729,7 +909,25 @@ namespace WilmerVRH_DataPrep
             List<Option_dict> task_option_dict = Create_option_dict();
             foreach (Option_dict item in task_option_dict)
             {
-                data.Add(
+                if(item.value_strings[1] == "Random")
+                {
+                    data.Add(
+                new WilmerVRHData()
+                {
+                    sceneName = "scene19-highfive",
+                    sceneTitle = "Highfive",
+                    presentationTime = time,
+                    timeOut = 600,
+                    graspThreshold = 0.3499999940395355,
+                    experimentMode = 1,
+                    controllerType = "Hands",
+                    serializedOptionsDictionary = item
+                }
+                );
+                }
+                else
+                {
+                    data.Add(
                 new WilmerVRHData()
                 {
                     sceneName = "scene19-highfive",
@@ -742,6 +940,8 @@ namespace WilmerVRH_DataPrep
                     serializedOptionsDictionary = item
                 }
                 );
+                }
+                
             }
 
             return data;
@@ -811,7 +1011,25 @@ namespace WilmerVRH_DataPrep
             List<Option_dict> task_option_dict = Create_option_dict();
             foreach (Option_dict item in task_option_dict)
             {
-                data.Add(
+                if (item.value_strings[1] == "Random")
+                {
+                    data.Add(
+                new WilmerVRHData()
+                {
+                    sceneName = "scene14-locate-wallet-keys-phone",
+                    sceneTitle = "Locating Common Items",
+                    presentationTime = time,
+                    timeOut = 600,
+                    graspThreshold = 0.3499999940395355,
+                    experimentMode = 1,
+                    controllerType = "Hands",
+                    serializedOptionsDictionary = item
+                }
+                );
+                }
+                else
+                {
+                    data.Add(
                 new WilmerVRHData()
                 {
                     sceneName = "scene14-locate-wallet-keys-phone",
@@ -824,6 +1042,8 @@ namespace WilmerVRH_DataPrep
                     serializedOptionsDictionary = item
                 }
                 );
+                }
+                
             }
 
             return data;
@@ -881,7 +1101,25 @@ namespace WilmerVRH_DataPrep
             List<Option_dict> task_option_dict = Create_option_dict();
             foreach (Option_dict item in task_option_dict)
             {
-                data.Add(
+                if (item.value_strings[1] == "Random")
+                {
+                    data.Add(
+                new WilmerVRHData()
+                {
+                    sceneName = "scene01-touch-light-spot",
+                    sceneTitle = "Touch the Light Spot",
+                    presentationTime = time,
+                    timeOut = 600,
+                    graspThreshold = 0.3499999940395355,
+                    experimentMode = 1,
+                    controllerType = "Hands",
+                    serializedOptionsDictionary = item
+                }
+                );
+                }
+                else
+                {
+                    data.Add(
                 new WilmerVRHData()
                 {
                     sceneName = "scene01-touch-light-spot",
@@ -894,6 +1132,8 @@ namespace WilmerVRH_DataPrep
                     serializedOptionsDictionary = item
                 }
                 );
+                }
+                
             }
 
             return data;
@@ -954,7 +1194,25 @@ namespace WilmerVRH_DataPrep
             List<Option_dict> task_option_dict = Create_option_dict();
             foreach (Option_dict item in task_option_dict)
             {
-                data.Add(
+                if (item.value_strings[1] == "Random")
+                {
+                    data.Add(
+                new WilmerVRHData()
+                {
+                    sceneName = "scene07-locating-light-switch",
+                    sceneTitle = "Locate Light Switch",
+                    presentationTime = time,
+                    timeOut = 600,
+                    graspThreshold = 0.3499999940395355,
+                    experimentMode = 1,
+                    controllerType = "Hands",
+                    serializedOptionsDictionary = item
+                }
+                );
+                }
+                else
+                {
+                    data.Add(
                 new WilmerVRHData()
                 {
                     sceneName = "scene07-locating-light-switch",
@@ -967,6 +1225,8 @@ namespace WilmerVRH_DataPrep
                     serializedOptionsDictionary = item
                 }
                 );
+                }
+                
             }
 
             return data;
@@ -1017,7 +1277,7 @@ namespace WilmerVRH_DataPrep
                     diffLevel = "Pork Chop";
                     break;
                 case "hard":
-                    diffLevel = "Fish";
+                    diffLevel = "Fish Filet";
                     break;
                 default:
                     diffLevel = "Steak";
@@ -1027,7 +1287,25 @@ namespace WilmerVRH_DataPrep
             List<Option_dict> task_option_dict = Create_option_dict();
             foreach (Option_dict item in task_option_dict)
             {
-                data.Add(
+                if (item.value_strings[1] == "Random")
+                {
+                    data.Add(
+                new WilmerVRHData()
+                {
+                    sceneName = "scene20-cutting-steak",
+                    sceneTitle = "Cutting Meat",
+                    presentationTime = time,
+                    timeOut = 600,
+                    graspThreshold = 0.3499999940395355,
+                    experimentMode = 1,
+                    controllerType = "Hands",
+                    serializedOptionsDictionary = item
+                }
+                );
+                }
+                else
+                {
+                   data.Add(
                 new WilmerVRHData()
                 {
                     sceneName = "scene20-cutting-steak",
@@ -1040,6 +1318,8 @@ namespace WilmerVRH_DataPrep
                     serializedOptionsDictionary = item
                 }
                 );
+                }
+    
             }
 
             return data;
@@ -1104,7 +1384,25 @@ namespace WilmerVRH_DataPrep
             List<Option_dict> task_option_dict = Create_option_dict();
             foreach (Option_dict item in task_option_dict)
             {
-                data.Add(
+                if (item.value_strings[1] == "Random")
+                {
+                    data.Add(
+                new WilmerVRHData()
+                {
+                    sceneName = "scene09-locating-milk-carton",
+                    sceneTitle = "Locate Milk Carton",
+                    presentationTime = time,
+                    timeOut = 600,
+                    graspThreshold = 0.3499999940395355,
+                    experimentMode = 1,
+                    controllerType = "Hands",
+                    serializedOptionsDictionary = item
+                }
+                );
+                }
+                else
+                {
+                    data.Add(
                 new WilmerVRHData()
                 {
                     sceneName = "scene09-locating-milk-carton",
@@ -1117,6 +1415,8 @@ namespace WilmerVRH_DataPrep
                     serializedOptionsDictionary = item
                 }
                 );
+                }
+                
             }
 
             return data;
@@ -1177,7 +1477,25 @@ namespace WilmerVRH_DataPrep
             List<Option_dict> task_option_dict = Create_option_dict();
             foreach (Option_dict item in task_option_dict)
             {
-                data.Add(
+                if (item.value_strings[1] == "Random")
+                {
+                    data.Add(
+                new WilmerVRHData()
+                {
+                    sceneName = "scene12-touch-moving-circle",
+                    sceneTitle = "Touch the Moving Spot",
+                    presentationTime = time,
+                    timeOut = 600,
+                    graspThreshold = 0.3499999940395355,
+                    experimentMode = 1,
+                    controllerType = "Hands",
+                    serializedOptionsDictionary = item
+                }
+                );
+                }
+                else
+                {
+                    data.Add(
                 new WilmerVRHData()
                 {
                     sceneName = "scene12-touch-moving-circle",
@@ -1190,6 +1508,8 @@ namespace WilmerVRH_DataPrep
                     serializedOptionsDictionary = item
                 }
                 );
+                }
+                
             }
 
             return data;
@@ -1243,7 +1563,25 @@ namespace WilmerVRH_DataPrep
             List<Option_dict> task_option_dict = Create_option_dict();
             foreach (Option_dict item in task_option_dict)
             {
-                data.Add(
+                if (item.value_strings[1] == "Random")
+                {
+                    data.Add(
+                new WilmerVRHData()
+                {
+                    sceneName = "scene17-making-pancake",
+                    sceneTitle = "Cooking Pancake",
+                    presentationTime = time,
+                    timeOut = 600,
+                    graspThreshold = 0.3499999940395355,
+                    experimentMode = 1,
+                    controllerType = "Hands",
+                    serializedOptionsDictionary = item
+                }
+                );
+                }
+                else
+                {
+                    data.Add(
                 new WilmerVRHData()
                 {
                     sceneName = "scene17-making-pancake",
@@ -1256,6 +1594,8 @@ namespace WilmerVRH_DataPrep
                     serializedOptionsDictionary = item
                 }
                 );
+                }
+                
             }
 
             return data;
@@ -1307,7 +1647,25 @@ namespace WilmerVRH_DataPrep
             List<Option_dict> task_option_dict = Create_option_dict();
             foreach (Option_dict item in task_option_dict)
             {
-                data.Add(
+                if (item.value_strings[1] == "Random")
+                {
+                    data.Add(
+                new WilmerVRHData()
+                {
+                    sceneName = "scene04-sorting-pills",
+                    sceneTitle = "Sorting Pills",
+                    presentationTime = time,
+                    timeOut = 600,
+                    graspThreshold = 0.3499999940395355,
+                    experimentMode = 1,
+                    controllerType = "Hands",
+                    serializedOptionsDictionary = item
+                }
+                );
+                }
+                else
+                {
+                    data.Add(
                 new WilmerVRHData()
                 {
                     sceneName = "scene04-sorting-pills",
@@ -1320,6 +1678,8 @@ namespace WilmerVRH_DataPrep
                     serializedOptionsDictionary = item
                 }
                 );
+                }
+                
             }
 
             return data;
@@ -1380,7 +1740,25 @@ namespace WilmerVRH_DataPrep
             List<Option_dict> task_option_dict = Create_option_dict();
             foreach (Option_dict item in task_option_dict)
             {
-                data.Add(
+                if (item.value_strings[1] == "Random")
+                {
+                    data.Add(
+                new WilmerVRHData()
+                {
+                    sceneName = "scene15-locate-plates-silverware-napkins",
+                    sceneTitle = "Locating Plates Silverware",
+                    presentationTime = time,
+                    timeOut = 600,
+                    graspThreshold = 0.3499999940395355,
+                    experimentMode = 1,
+                    controllerType = "Hands",
+                    serializedOptionsDictionary = item
+                }
+                );
+                }
+                else
+                {
+                    data.Add(
                 new WilmerVRHData()
                 {
                     sceneName = "scene15-locate-plates-silverware-napkins",
@@ -1393,6 +1771,8 @@ namespace WilmerVRH_DataPrep
                     serializedOptionsDictionary = item
                 }
                 );
+                }
+                
             }
 
             return data;
@@ -1450,7 +1830,25 @@ namespace WilmerVRH_DataPrep
             List<Option_dict> task_option_dict = Create_option_dict();
             foreach (Option_dict item in task_option_dict)
             {
-                data.Add(
+                if (item.value_strings[1] == "Random")
+                {
+                    data.Add(
+                new WilmerVRHData()
+                {
+                    sceneName = "scene02-whackamole",
+                    sceneTitle = "Whack-a-mole",
+                    presentationTime = time,
+                    timeOut = 600,
+                    graspThreshold = 0.3499999940395355,
+                    experimentMode = 1,
+                    controllerType = "Hands",
+                    serializedOptionsDictionary = item
+                }
+                );
+                }
+                else
+                {
+                    data.Add(
                 new WilmerVRHData()
                 {
                     sceneName = "scene02-whackamole",
@@ -1463,6 +1861,8 @@ namespace WilmerVRH_DataPrep
                     serializedOptionsDictionary = item
                 }
                 );
+                }
+                
             }
 
             return data;
@@ -1480,16 +1880,13 @@ namespace WilmerVRH_DataPrep
                          }
                         );
                 }
-                for (int i = 0; i < 3; i++)
+                output.Add(
+                new Option_dict
                 {
-                    output.Add(
-                    new Option_dict
-                    {
-                        key_strings = new string[2] { "TimeLimit", "SpawnPosition" },
-                        value_strings = new string[2] { diffLevel, "Random" }
-                    }
-                    );
+                    key_strings = new string[2] { "TimeLimit", "SpawnPosition" },
+                    value_strings = new string[2] { diffLevel, "Random" }
                 }
+                );
 
 
                 return output;
