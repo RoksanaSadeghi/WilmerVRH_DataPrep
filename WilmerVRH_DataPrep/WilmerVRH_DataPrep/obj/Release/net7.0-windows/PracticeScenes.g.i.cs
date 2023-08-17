@@ -118,7 +118,7 @@ namespace WilmerVRH_DataPrep {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/WilmerVRH_DataPrep;component/practicescenes.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/WilmerVRH_DataPrep;V2.0.0.0;component/practicescenes.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\PracticeScenes.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);
