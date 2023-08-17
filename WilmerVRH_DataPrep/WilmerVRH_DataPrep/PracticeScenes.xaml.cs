@@ -46,7 +46,7 @@ namespace WilmerVRH_DataPrep
         private void CreatePracticePlaylist()
         {
             selectedPracticeTasks = new();
-            object obj = new WilmerVRH_tests();
+            object obj = new WilmerVRH_Practice();
             Type type = obj.GetType();
 
             string[] orderedKey = new string[] { 

@@ -12,7 +12,7 @@ using System;
 using System.Reflection;
 
 [assembly: System.Reflection.AssemblyCompanyAttribute("WilmerVRH_DataPrep")]
-[assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
+[assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyProductAttribute("WilmerVRH_DataPrep")]
 [assembly: System.Reflection.AssemblyTitleAttribute("WilmerVRH_DataPrep")]
 [assembly: System.Runtime.Versioning.TargetPlatformAttribute("Windows7.0")]
