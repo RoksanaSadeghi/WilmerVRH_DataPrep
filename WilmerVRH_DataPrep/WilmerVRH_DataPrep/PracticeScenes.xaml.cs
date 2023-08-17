@@ -116,17 +116,17 @@ namespace WilmerVRH_DataPrep
         {
 
             CheckBox cb = sender as CheckBox;
-            string name = cb.Name.ToString();
+            string[] name = cb.Name.ToString().Split("__");
 
-            vrh_practice.wilmerVRHPracticeTasks[name] = 1;
+            vrh_practice.wilmerVRHPracticeTasks[name[1]] = 1;
         }
 
         private void CheckBoxDifficultyLevel_Unchecked(object sender, RoutedEventArgs e)
         {
             CheckBox cb = sender as CheckBox;
-            string name = cb.Name.ToString();
+            string[] name = cb.Name.ToString().Split("__");
 
-            vrh_practice.wilmerVRHPracticeTasks[name] = 0;
+            vrh_practice.wilmerVRHPracticeTasks[name[1]] = 0;
         }
 
         bool selectAll_ = true;
